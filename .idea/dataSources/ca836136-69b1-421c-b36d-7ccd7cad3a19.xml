@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="symf_test@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.4">
+    <root id="1"/>
+    <database id="2" parent="1" name="symf_test">
+      <ObjectId>26990</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12415</ObjectId>
+    </database>
+    <database id="4" parent="1" name="simplecms_dev">
+      <ObjectId>16385</ObjectId>
+    </database>
+    <database id="5" parent="1" name="simplecms_test">
+      <ObjectId>16386</ObjectId>
+    </database>
+    <database id="6" parent="1" name="cms_dev">
+      <ObjectId>16524</ObjectId>
+    </database>
+    <database id="7" parent="1" name="cms_test">
+      <ObjectId>16525</ObjectId>
+    </database>
+    <database id="8" parent="1" name="Ege_dev">
+      <ObjectId>17644</ObjectId>
+    </database>
+    <database id="9" parent="1" name="feedback_dev">
+      <ObjectId>17834</ObjectId>
+    </database>
+    <database id="10" parent="1" name="feedback_test">
+      <ObjectId>17835</ObjectId>
+    </database>
+    <database id="11" parent="1" name="portal_dev">
+      <ObjectId>17863</ObjectId>
+    </database>
+    <database id="12" parent="1" name="portal_test">
+      <ObjectId>17864</ObjectId>
+    </database>
+    <database id="13" parent="1" name="complaints_dev">
+      <ObjectId>18055</ObjectId>
+    </database>
+    <database id="14" parent="1" name="complaints_test">
+      <ObjectId>18056</ObjectId>
+    </database>
+    <database id="15" parent="1" name="php_dev">
+      <ObjectId>18084</ObjectId>
+    </database>
+    <database id="16" parent="1" name="phpp_dev">
+      <ObjectId>18204</ObjectId>
+    </database>
+    <database id="17" parent="1" name="blog_dev">
+      <ObjectId>18302</ObjectId>
+    </database>
+    <database id="18" parent="1" name="blog">
+      <ObjectId>18303</ObjectId>
+    </database>
+    <database id="19" parent="1" name="test">
+      <ObjectId>26555</ObjectId>
+    </database>
+    <database id="20" parent="1" name="tasks">
+      <ObjectId>26567</ObjectId>
+    </database>
+    <database id="21" parent="1" name="prover">
+      <ObjectId>27572</ObjectId>
+    </database>
+    <schema id="22" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-01-11.17:19:32.336</IntrospectionTimestamp>
+      <IntrospectionStateNumber>633368</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="23" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="24" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="25" parent="2" name="pg_temp_1">
+      <ObjectId>11816</ObjectId>
+    </schema>
+    <schema id="26" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11817</ObjectId>
+    </schema>
+    <schema id="27" parent="2" name="information_schema">
+      <ObjectId>12123</ObjectId>
+    </schema>
+    <sequence id="28" parent="22" name="ad_id_seq">
+      <ObjectId>27476</ObjectId>
+      <StateNumber>622084</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="29" parent="22" name="advert_id_seq">
+      <ObjectId>27031</ObjectId>
+      <StateNumber>621952</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="30" parent="22" name="category_id_seq">
+      <ObjectId>27029</ObjectId>
+      <StateNumber>621951</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="31" parent="22" name="parameter_id_seq">
+      <ObjectId>27543</ObjectId>
+      <StateNumber>631771</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="32" parent="22" name="test_id_seq">
+      <ObjectId>27869</ObjectId>
+      <StateNumber>633367</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <table id="33" parent="22" name="ad">
+      <ObjectId>27478</ObjectId>
+      <StateNumber>622970</StateNumber>
+    </table>
+    <table id="34" parent="22" name="advert">
+      <ObjectId>27039</ObjectId>
+      <StateNumber>622108</StateNumber>
+    </table>
+    <table id="35" parent="22" name="category">
+      <ObjectId>27033</ObjectId>
+      <StateNumber>622096</StateNumber>
+    </table>
+    <table id="36" parent="22" name="parameter">
+      <ObjectId>27545</ObjectId>
+      <StateNumber>631772</StateNumber>
+    </table>
+    <table id="37" parent="22" name="test">
+      <ObjectId>27871</ObjectId>
+      <StateNumber>633368</StateNumber>
+    </table>
+    <column id="38" parent="33" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>622085</StateNumber>
+    </column>
+    <column id="39" parent="33" name="title">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>622085</StateNumber>
+    </column>
+    <column id="40" parent="33" name="description">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>622085</StateNumber>
+      <DefaultExpression>NULL::character varying</DefaultExpression>
+    </column>
+    <column id="41" parent="33" name="price">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>622085</StateNumber>
+    </column>
+    <column id="42" parent="33" name="categry_id">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>622094</StateNumber>
+    </column>
+    <index id="43" parent="33" name="ad_pkey">
+      <ObjectId>27485</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="44" parent="33" name="idx_77e0ed587a02c1b3">
+      <ObjectId>27498</ObjectId>
+      <ColNames>categry_id</ColNames>
+    </index>
+    <key id="45" parent="33" name="ad_pkey">
+      <ObjectId>27486</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>ad_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="46" parent="33" name="fk_77e0ed587a02c1b3">
+      <ObjectId>27493</ObjectId>
+      <ColNames>categry_id</ColNames>
+      <RefTableId>27033</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>category</RefTableName>
+      <RefKeyName>category_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="47" parent="34" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>621955</StateNumber>
+    </column>
+    <column id="48" parent="34" name="title">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>621955</StateNumber>
+    </column>
+    <column id="49" parent="34" name="created_at">
+      <Position>3</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>621955</StateNumber>
+    </column>
+    <column id="50" parent="34" name="category_id">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>621955</StateNumber>
+    </column>
+    <index id="51" parent="34" name="advert_pkey">
+      <ObjectId>27042</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="52" parent="34" name="advert_pkey">
+      <ObjectId>27043</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>advert_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="53" parent="35" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>621953</StateNumber>
+    </column>
+    <column id="54" parent="35" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>621953</StateNumber>
+    </column>
+    <index id="55" parent="35" name="category_pkey">
+      <ObjectId>27036</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="56" parent="35" name="uniq_64c19c15e237e06">
+      <ObjectId>27038</ObjectId>
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="57" parent="35" name="category_pkey">
+      <ObjectId>27037</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>category_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="58" parent="36" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>631772</StateNumber>
+    </column>
+    <column id="59" parent="36" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>631772</StateNumber>
+    </column>
+    <index id="60" parent="36" name="parameter_pkey">
+      <ObjectId>27548</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="61" parent="36" name="parameter_pkey">
+      <ObjectId>27549</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>parameter_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="62" parent="37" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>633368</StateNumber>
+    </column>
+    <column id="63" parent="37" name="text">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>633368</StateNumber>
+    </column>
+    <column id="64" parent="37" name="person">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>633368</StateNumber>
+    </column>
+    <index id="65" parent="37" name="test_pkey">
+      <ObjectId>27877</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="66" parent="37" name="test_pkey">
+      <ObjectId>27878</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>test_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

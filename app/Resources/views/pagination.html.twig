@@ -1,0 +1,19 @@
+{% if numPages > 1 %}
+    <div class="col-md-12">
+        <nav aria-label="Page navigation" class="text-center">
+            <ul class="pagination">
+                <li {% if curPage < 2 %}class="hidden"{% endif %}>
+                    <a href="{{ here }}?page={{ curPage - 1 }}" {% if curPage < 1 %}class="disabled"{% endif %} aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+                </li>
+                {% for i in 1..numPages %}
+                    <li {% if curPage == i %}class="active"{% endif %}>
+                        <a href="{{ here }}?page={{ i }}">{{ i }}</a>
+                    </li>
+                {% endfor %}
+                <li {% if curPage == numPages %}class="hidden"{% endif %}>
+                    <a href="{{ here }}?page={{ curPage + 1 }}" {% if curPage == numPages %}class="hidden"{% endif %} aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+{% endif %}

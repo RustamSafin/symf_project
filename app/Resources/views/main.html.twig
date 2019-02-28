@@ -1,0 +1,122 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if posts %}
+        <div class="col-md-12">
+            <h2 class="col-md-10 med">Posts: {{ size }}</h2>
+        </div>
+        {% for post in posts %}
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">{{ post.title }}
+                    </div>
+                    <div class="panel-body">
+                        <div>
+                            {{ post.body }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        {% include 'pagination.html.twig' %}
+    {% endif %}
+    <style>
+        /* Кнопка «воспроизведение/пауза». */
+        .controls_play {
+            padding: 5px 10px;
+            background: #fff;
+            border: 1px #aaa solid;
+            cursor: pointer;
+        }
+        .controls_play:hover {
+            border-color: #666;
+        }
+        /* Настройка контейнера с Flash-апплетом. */
+        .overlay {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+        }
+        /* Класс .overlay_hidden необходим для того, чтобы
+           скрыть div-контейнер с Flash-апплетом. */
+        .overlay_hidden {
+            display: none;
+        }
+        /* Класс для отображения ошибки при блокировке Flash-апплета. */
+        .overlay_error {
+            background: #ffcccc;
+            color: #ff0000;
+        }
+    </style>
+
+
+    <div class="player">
+        <!-- Кнопка «воспроизведение/пауза». -->
+        <div class="controls">
+            <button class="controls_play">Play</button>
+        </div>
+        <!-- HTML-элемент, в котором будет размещен Flash-апплет.
+             Если браузер заблокирует Flash-содержимое, в апплете будет
+             отображено уведомление о блокировке.
+             Для разблокировки плеера пользователю достаточно будет
+             произвести клик по Flash-апплету. -->
+        <div class="overlay"></div>
+    </div>
+    <script src="https://music.yandex.ru/api/audio/dist/index.js"></script>
+    <script>
+
+        var AudioPlayer = ya.music.Audio;
+
+        // Инициализируем HTML-структуру.
+        var dom = {
+            player: document.querySelector(".player"),
+            play: document.querySelector(".controls_play"),
+            overlay: document.querySelector(".overlay")
+        };
+
+        // Предоставим плееру самому решать какой тип реализации использовать.
+        var audioPlayer = new AudioPlayer('', dom.overlay);
+
+        // В случае ошибки при инициализации плеера отображаем сообщение
+        // об ошибке во Flash-апплете.
+        audioPlayer.initPromise().then(function() {
+            // Скрываем оверлей, кнопки управления становятся доступны.
+            dom.overlay.classList.add("overlay_hidden");
+            dom.overlay.innerHTML = "Плеер"
+        }, function(err) {
+            // Показываем ошибку инициализации в оверлее
+            dom.overlay.innerHTML = err.message;
+            dom.overlay.classList.add("overlay_error");
+        });
+
+        // Слушаем событие "клик" на кнопке плеера.
+        // В зависимости от текущего статуса плеера
+        // воспроизведение будем ставить на паузу или повторно запускать.
+        dom.play.addEventListener("click", function() {
+            // Текущий статус плеера.
+            var state = audioPlayer.getState();
+
+            switch (state) {
+                case ya.music.Audio.STATE_PLAYING:
+                    audioPlayer.pause();
+                    dom.play.innerHTML="Play";
+                    break;
+
+                case ya.music.Audio.STATE_PAUSED:
+                    audioPlayer.resume();
+                    dom.play.innerHTML="Pause";
+                    break;
+
+                default:
+                    audioPlayer.play('http://my-host.ru/track.mp3');
+                    dom.play.innerHTML="Pause";
+                    break;
+            }
+        });
+    </script>
+
+{% endblock %}
